@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a0acefc-4bd5-4a96-bfe2-1f2ae58b8746" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stockinfo.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stock001.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stock01.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stock01.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_easyquotation.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-    </list>
+    <list default="true" id="2a0acefc-4bd5-4a96-bfe2-1f2ae58b8746" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
