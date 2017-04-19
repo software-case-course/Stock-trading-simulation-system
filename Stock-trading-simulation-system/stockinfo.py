@@ -61,50 +61,89 @@ class Ui_MainWindow(object):
 
     #self.StockCodeButton.clicked.connect(self.ShowStockInfo)
 
-
-
-
     def ShowStockInfo(self):
         #self.StockCodeEdit.setText('162411')
         code=self.StockCodeEdit.text()
         if code.isdigit() and len(code)==6 :
             if self.comboBox.currentText()=='新浪':
                 quotation = easyquotation.use('sina')
+                stockdata = quotation.stocks(code)
+                if stockdata:
+                    stockdata = stockdata[code]
+                    print(stockdata)
+                    self.model = QtGui.QStandardItemModel(self.tableView)
+
+                    self.tableView.verticalHeader().setVisible(False)
+                    self.tableView.horizontalHeader().setVisible(False)
+
+                    self.model.setColumnCount(2)
+                    self.model.setRowCount(8)
+                    self.model.setItem(1, 0, QtGui.QStandardItem('股票名称'))
+                    self.model.setItem(1, 1, QtGui.QStandardItem(stockdata['name']))
+                    self.model.setItem(0, 0, QtGui.QStandardItem('股票代码'))
+                    self.model.setItem(0, 1, QtGui.QStandardItem(self.StockCodeEdit.text()))
+                    self.model.setItem(2, 0, QtGui.QStandardItem('现价'))
+                    self.model.setItem(2, 1, QtGui.QStandardItem(str(stockdata['now'])))
+                    self.model.setItem(3, 0, QtGui.QStandardItem('开盘价'))
+                    self.model.setItem(3, 1, QtGui.QStandardItem(str(stockdata['open'])))
+                    self.model.setItem(4, 0, QtGui.QStandardItem('昨日收盘价'))
+                    self.model.setItem(4, 1, QtGui.QStandardItem(str(stockdata['close'])))
+                    self.model.setItem(5, 0, QtGui.QStandardItem('今日最高价'))
+                    self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['high'])))
+                    self.model.setItem(5, 0, QtGui.QStandardItem('今日最低价'))
+                    self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['low'])))
+                    self.model.setItem(6, 0, QtGui.QStandardItem('时间'))
+                    self.model.setItem(6, 1, QtGui.QStandardItem(stockdata['time']))
+                    self.model.setItem(7, 0, QtGui.QStandardItem('日期'))
+                    self.model.setItem(7, 1, QtGui.QStandardItem(stockdata['date']))
+
+                    self.tableView.setModel(self.model)
+                else:
+                    self.StockCodeEdit.setText('请输入正确的股票代码')
             elif self.comboBox.currentText()=='腾讯':
                 quotation = easyquotation.use('qq')
-            stockdata = quotation.stocks(code)
-            if stockdata:
-                stockdata = stockdata[code]
-                print(stockdata)
-                self.model = QtGui.QStandardItemModel(self.tableView)
+                stockdata = quotation.stocks(code)
+                if stockdata:
+                    stockdata = stockdata[code]
+                    print(stockdata)
+                    self.model = QtGui.QStandardItemModel(self.tableView)
 
-                self.tableView.verticalHeader().setVisible(False)
-                self.tableView.horizontalHeader().setVisible(False)
+                    self.tableView.verticalHeader().setVisible(False)
+                    self.tableView.horizontalHeader().setVisible(False)
 
-                self.model.setColumnCount(2)
-                self.model.setRowCount(8)
-                self.model.setItem(1, 0, QtGui.QStandardItem('股票名称'))
-                self.model.setItem(1, 1, QtGui.QStandardItem(stockdata['name']))
-                self.model.setItem(0, 0, QtGui.QStandardItem('股票代码'))
-                self.model.setItem(0, 1, QtGui.QStandardItem(self.StockCodeEdit.text()))
-                self.model.setItem(2, 0, QtGui.QStandardItem('现价'))
-                self.model.setItem(2, 1, QtGui.QStandardItem(str(stockdata['now'])))
-                self.model.setItem(3, 0, QtGui.QStandardItem('开盘价'))
-                self.model.setItem(3, 1, QtGui.QStandardItem(str(stockdata['open'])))
-                self.model.setItem(4, 0, QtGui.QStandardItem('昨日收盘价'))
-                self.model.setItem(4, 1, QtGui.QStandardItem(str(stockdata['close'])))
-                self.model.setItem(5, 0, QtGui.QStandardItem('今日最高价'))
-                self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['high'])))
-                self.model.setItem(5, 0, QtGui.QStandardItem('今日最低价'))
-                self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['low'])))
-                self.model.setItem(6, 0, QtGui.QStandardItem('时间'))
-                self.model.setItem(6, 1, QtGui.QStandardItem(stockdata['time']))
-                self.model.setItem(7, 0, QtGui.QStandardItem('日期'))
-                self.model.setItem(7, 1, QtGui.QStandardItem(stockdata['date']))
+                    self.model.setColumnCount(4)
+                    self.model.setRowCount(6)
+                    self.model.setItem(1, 0, QtGui.QStandardItem('股票名称'))
+                    self.model.setItem(1, 1, QtGui.QStandardItem(stockdata['name']))
+                    self.model.setItem(0, 0, QtGui.QStandardItem('股票代码'))
+                    self.model.setItem(0, 1, QtGui.QStandardItem(self.StockCodeEdit.text()))
+                    self.model.setItem(2, 0, QtGui.QStandardItem('现价'))
+                    self.model.setItem(2, 1, QtGui.QStandardItem(str(stockdata['now'])))
+                    self.model.setItem(3, 0, QtGui.QStandardItem('开盘价'))
+                    self.model.setItem(3, 1, QtGui.QStandardItem(str(stockdata['open'])))
+                    self.model.setItem(4, 0, QtGui.QStandardItem('昨日收盘价'))
+                    self.model.setItem(4, 1, QtGui.QStandardItem(str(stockdata['close'])))
+                    self.model.setItem(5, 0, QtGui.QStandardItem('今日最高价'))
+                    self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['high'])))
+                    self.model.setItem(5, 0, QtGui.QStandardItem('今日最低价'))
+                    self.model.setItem(5, 1, QtGui.QStandardItem(str(stockdata['low'])))
+                    self.model.setItem(0, 2, QtGui.QStandardItem('振幅'))
+                    self.model.setItem(0, 3, QtGui.QStandardItem(str(stockdata['振幅'])))
+                    self.model.setItem(1, 2, QtGui.QStandardItem('涨停价'))
+                    self.model.setItem(1, 3, QtGui.QStandardItem(str(stockdata['涨停价'])))
+                    self.model.setItem(2, 2, QtGui.QStandardItem('跌停价'))
+                    self.model.setItem(2, 3, QtGui.QStandardItem(str(stockdata['跌停价'])))
+                    self.model.setItem(3, 2, QtGui.QStandardItem('涨跌(%)'))
+                    self.model.setItem(3, 3, QtGui.QStandardItem(str(stockdata['涨跌(%)'])+'%'))
+                    self.model.setItem(4, 2, QtGui.QStandardItem('涨跌'))
+                    self.model.setItem(4, 3, QtGui.QStandardItem(str(stockdata['涨跌'])))
+                    self.model.setItem(5, 2, QtGui.QStandardItem('信息时间'))
+                    self.model.setItem(5, 3, QtGui.QStandardItem(str(stockdata['datetime'])))
 
-                self.tableView.setModel(self.model)
-            else:
-                self.StockCodeEdit.setText('请输入正确的股票代码')
+                    self.tableView.setModel(self.model)
+                else:
+                    self.StockCodeEdit.setText('请输入正确的股票代码')
+
 
         else:
             self.StockCodeEdit.setText('请输入6位数字的股票代码')
