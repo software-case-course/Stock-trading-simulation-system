@@ -9,8 +9,27 @@
 * 登陆功能  
 
 ##### 2.股票查询模块 
+
+* 两个数据接口（新浪、腾讯接口）
+
+* 输入股票代码（6位数字如：华宝油气————162411）  
+
+* 显示股票名称、现价、开盘价、昨日收盘价、今日最低价、时间、日期  
+
 ##### 3.股票交易模块 
 
 
 ### 版本进度 v1
+
 使用PyQt5完成股票信息查询模块的UI界面， 使用了[easyquotation](https://github.com/shidenggui/easyquotation)，输入股票代码即可获取实时或当天信息
+
+
+程序基于python3编写，需要先布置python环境使用，请于[python官网](https://www.python.org/downloads/）或[备用](http://pan.baidu.com/s/1pLdkCIJ)下载。
+
+可能需要用到的python模块：
+
+pip install requests
+pip install aiohttp
+pip install easyutils
+pip install pyQt5
+
