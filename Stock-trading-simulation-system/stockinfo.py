@@ -38,7 +38,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.comboBox)
         self.StockCodeButton = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.StockCodeButton.setObjectName("StockCodeButton")
+
         self.StockCodeButton.clicked.connect(self.ShowStockInfo)
+
         self.horizontalLayout.addWidget(self.StockCodeButton)
         self.tableView = QtWidgets.QTableView(self.centralwidget)
         self.tableView.setGeometry(QtCore.QRect(10, 90, 421, 291))
