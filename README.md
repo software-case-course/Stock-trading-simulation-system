@@ -24,7 +24,7 @@
 使用PyQt5完成股票信息查询模块的UI界面， 使用了[easyquotation](https://github.com/shidenggui/easyquotation)，输入股票代码即可获取实时或当天信息
 
 
-程序基于python3编写，需要先布置python环境使用，请于[python官网](https://github.com/shidenggui/easyquotation) 或 [备用](http://pan.baidu.com/s/1pLdkCIJ)  下载。
+程序基于python3编写，需要先布置python环境使用，请于[python官网](https://www.python.org/downloads) 或 [备用](http://pan.baidu.com/s/1pLdkCIJ)  下载。
 
 可能需要用到的python模块：
 
