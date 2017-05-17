@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>603</width>
-    <height>373</height>
+    <width>518</width>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,45 +23,13 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>50</y>
+      <x>10</x>
+      <y>60</y>
       <width>491</width>
-      <height>255</height>
+      <height>276</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QPushButton" name="account">
-         <property name="text">
-          <string>账户登陆</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="purchase">
-         <property name="text">
-          <string>股票购入</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="sell">
-         <property name="text">
-          <string>股票售出</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="accountinformation">
-         <property name="text">
-          <string>个人股票信息</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
      <item row="0" column="1">
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -132,6 +100,13 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="name">
+           <property name="text">
+            <string>股票名称：</string>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="1">
           <widget class="QLineEdit" name="nameoutput">
            <property name="sizePolicy">
@@ -245,16 +220,80 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="name">
-           <property name="text">
-            <string>股票名称：</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
       </layout>
+     </item>
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QPushButton" name="account">
+         <property name="text">
+          <string>账户登陆</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="purchase">
+         <property name="text">
+          <string>股票购入</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sell">
+         <property name="text">
+          <string>股票售出</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="accountinformation">
+         <property name="text">
+          <string>个人股票信息</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>0</y>
+      <width>401</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>当前登录账号:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Trebuchet MS</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>用户1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>退出登录</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
