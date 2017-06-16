@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     # ui = stockinfo.Ui_MainWindow()
     ui = mainwindow.Ui_MainWindow()
-    qss_file = open('style.qss').read()
+    qss_file = open('qss/black.css').read()
     MainWindow.setStyleSheet(qss_file)
     ui.setupUi(MainWindow)
     MainWindow.show()
