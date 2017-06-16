@@ -1,6 +1,7 @@
 import sys
 import stockinfo
 import mainwindow
+
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
