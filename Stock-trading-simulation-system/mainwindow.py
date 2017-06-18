@@ -8,6 +8,7 @@
 
 import easyquotation
 import logindialog
+import time
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDialog
@@ -182,16 +183,19 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def showbox(self):
+
+        self.account.hide()
+
         # QtWidgets.QMessageBox.information(self.pushButton, "标题", "这是第一个PyQt5 GUI程序")
 
-        lg = QDialog()
-        ui = logindialog.Ui_logindialog()
-        qss_file = open('qss/black.css').read()
-        lg.setStyleSheet(qss_file)
-        ui.setupUi(lg)
-        lg.show()
-        if lg.exec_()==1:
-            print(ui.username.e)
+        # lg = QDialog()
+        # ui = logindialog.Ui_logindialog()
+        # qss_file = open('qss/black.css').read()
+        # lg.setStyleSheet(qss_file)
+        # ui.setupUi(lg)
+        # lg.show()
+        # if lg.exec_()==1:
+        #     print(ui.username.e)
 
 
     def retranslateUi(self, MainWindow):
@@ -216,6 +220,7 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "退出登录"))
 
     def ShowStock(self):
+        self.account.show()
         # self.StockCodeEdit.setText('162411')
         code = self.codeinput.text()
         if code.isdigit() and len(code) == 6:
