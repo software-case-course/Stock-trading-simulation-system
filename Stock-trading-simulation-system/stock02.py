@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(451, 395)
@@ -51,7 +52,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "股票实时信息查询"))
         self.label.setText(_translate("MainWindow", "股票代码:"))
         self.comboBox.setItemText(0, _translate("MainWindow", "新浪"))
         self.comboBox.setItemText(1, _translate("MainWindow", "腾讯"))

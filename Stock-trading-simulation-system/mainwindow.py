@@ -6,9 +6,12 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+import easyquotation
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-import easyquotation
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -170,10 +173,15 @@ class Ui_MainWindow(object):
 
         self.search.clicked.connect(self.ShowStock)
 
+
+
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
