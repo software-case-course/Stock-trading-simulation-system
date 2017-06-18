@@ -7,9 +7,10 @@
 # WARNING! All changes made in this file will be lost!
 
 import easyquotation
-
+import logindialog
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QDialog
 
 
 
@@ -173,14 +174,24 @@ class Ui_MainWindow(object):
 
         self.search.clicked.connect(self.ShowStock)
 
-
+        self.account.clicked.connect(self.showbox)
 
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def showbox(self):
+        # QtWidgets.QMessageBox.information(self.pushButton, "标题", "这是第一个PyQt5 GUI程序")
 
+        lg = QDialog()
+        ui = logindialog.Ui_logindialog()
+        qss_file = open('qss/black.css').read()
+        lg.setStyleSheet(qss_file)
+        ui.setupUi(lg)
+        lg.show()
+        if lg.exec_()==1:
+            print(ui.username.e)
 
 
     def retranslateUi(self, MainWindow):

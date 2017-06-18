@@ -47,3 +47,4 @@ class Ui_logindialog(object):
         self.username.setText(_translate("logindialog", "用户名"))
         self.userpw.setText(_translate("logindialog", "密码"))
 
+
