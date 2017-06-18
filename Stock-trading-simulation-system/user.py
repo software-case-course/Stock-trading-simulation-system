@@ -1,120 +1,101 @@
-# -*- coding: gb2312 -*-
-#ÓÃ»§ÃûÃÜÂëµÇÂ¼ÏµÍ³£¨MD5¼ÓÃÜ²¢´æÈëÎÄ¼ş£©¼°¶Ô×Ö·û´®½øĞĞ¿­ÈöÃÜÂë¼Ó½âÃÜ²Ù×÷
-#×÷Õß£º¿­Â³¸Â¼ª - ²©¿ÍÔ° http://www.cnblogs.com/kailugaji/
-import hashlib
-def md5(arg):#ÕâÊÇ¼ÓÃÜº¯Êı£¬½«´«½øÀ´µÄº¯Êı¼ÓÃÜ
-        md5_pwd = hashlib.md5(bytes('admin'))
-        md5_pwd.update(bytes(arg))
-        return md5_pwd.hexdigest()#·µ»Ø¼ÓÃÜµÄÊı¾İ
+#-*- coding:utf-8 -*-
+'''
+inputDialog
+'''
+__author__ = 'Tony Zhu'
 
-def log(user,pwd):#µÇÂ¼Ê±µÄº¯Êı£¬ÓÉÓÚmd5²»ÄÜ·´½â£¬Òò´ËµÇÂ½µÄÊ±ºòÓÃÕı½â
-        with open('pass.txt','r') as f:
-            for line in f:
-                u,p=line.strip().split('|')
-                if u == user and p == md5(pwd):#µÇÂ¼µÄÊ±ºòÑéÖ¤ÓÃ»§ÃûÒÔ¼°¼ÓÃÜµÄÃÜÂë¸úÖ®Ç°±£´æµÄÊÇ·ñÒ»Ñù
-                     return True
+from PyQt5.QtWidgets import QApplication, QWidget, QLineEdit, QInputDialog, QGridLayout, QLabel, QPushButton, QFrame
 
-def register(user,pwd):#×¢²áµÄÊ±ºò°ÑÓÃ»§ÃûºÍ¼ÓÃÜµÄÃÜÂëĞ´½øÎÄ¼ş£¬±£´æÆğÀ´
-        with open('pass.txt','a') as f:
-            temp = user+'|'+ md5(pwd)+'\n'
-            f.write(temp)
+class InputDialog(QWidget):
+    def __init__(self):
+        super(InputDialog,self).__init__()
+        self.initUi()
 
-def encryption(): #¼Ó½âÃÜ½çÃæ
-        offset=int(input('~~~~~~~~~~~~~~~~~~~~~~~~~~\n'
-                         'ÇëÊäÈëÆ«ÒÆÁ¿:\n'
-                         '´óÓÚ0Ğ¡ÓÚ26:Æ«ÒÆÁ¿\n'
-                         '0£ºÍË³öµÇÂ¼\n'
-                         '~~~~~~~~~~~~~~~~~~~~~~~~~~\n'))
-        if offset in range(1,25):
-            variable=int(input('~~~~~~~~~~~~~~~~~~~~~~~~~~\n'
-                               'ÇëÑ¡Ôñ²Ù×÷£º\n'
-                               '1£º¼ÓÃÜ\n'
-                               '2£º½âÃÜ\n'
-                               '~~~~~~~~~~~~~~~~~~~~~~~~~~\n'))
-            user1=Caesar(offset,variable)
-            user1.choose()
-        elif offset==0:
-            print('Ğ»Ğ»Ê¹ÓÃ£¬ÔÙ¼û£¡')
-            exit(0)
-        else:
-            print('Æ«ÒÆÁ¿³¬³ö·¶Î§,ÇëÖØĞÂÊäÈë£¡')
+    def initUi(self):
+        self.setWindowTitle("é¡¹ç›®ä¿¡æ¯")
+        self.setGeometry(400,400,300,260)
 
-class Caesar: # ¶¨ÒåÀà£¬Ãû½ĞCaesar
-    def __init__(self, offset, variable):# ³õÊ¼»¯
-        self.passage = offset
-        self.type = variable
+        label1=QLabel("é¡¹ç›®åç§°:")
+        label2=QLabel("é¡¹ç›®ç±»å‹:")
+        label3=QLabel("é¡¹ç›®äººå‘˜:")
+        label4=QLabel("é¡¹ç›®æˆæœ¬:")
+        label5=QLabel("é¡¹ç›®ä»‹ç»:")
 
-    def encrypt(self,offset): # ¼ÓÃÜ
-        move = (ord(offset)-97+self.passage) % 26+97  # ÓÃASCIIÂëÖµÀ´Íê³ÉÒÆ¶¯£¬ord()½«×Ö·û×ª»¯Îª¶ÔÓ¦ASCIIÂëµÄÊ®½øÖÆÊı
-        return chr(move)    #½«ASCIIÂë×ª»¯Îª¶ÔÓ¦µÄÊıÖµ£¬chr()½«Ò»¸öÕûÊı×ª»¯ÎªUnicode×Ö·û
+        self.nameLable = QLabel("PyQt5")
+        self.nameLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+        self.styleLable = QLabel("å¤–åŒ…")
+        self.styleLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+        self.numberLable = QLabel("40")
+        self.numberLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+        self.costLable = QLabel("400.98")
+        self.costLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
+        self.introductionLable = QLabel("æœåŠ¡å¤–åŒ…ç¬¬ä¸‰æ–¹å…¬å¸")
+        self.introductionLable.setFrameStyle(QFrame.Panel|QFrame.Sunken)
 
-    def decrypt(self,offset): # ½âÃÜ
-        move=(ord(offset)-97-self.passage)%26+97
-        if move < 97:
-            move = move + 26
-        return chr(move)
+        nameButton=QPushButton("...")
+        nameButton.clicked.connect(self.selectName)
+        styleButton=QPushButton("...")
+        styleButton.clicked.connect(self.selectStyle)
+        numberButton=QPushButton("...")
+        numberButton.clicked.connect(self.selectNumber)
+        costButton=QPushButton("...")
+        costButton.clicked.connect(self.selectCost)
+        introductionButton=QPushButton("...")
+        introductionButton.clicked.connect(self.selectIntroduction)
 
-    def choose(self):   # Ñ¡Ôñ
-        str2=''
-        if self.type==1: # ¼ÓÃÜÊ±½øÈë
-            str1=input("ÇëÊäÈëÒª¼ÓÃÜµÄ×Ö·û´®('xxx'):\n")
-            org=str1
-            for i in range (len(str1)): # str1ÎªÊäÈëµÄ×Ö·û´®
-                str1=str1[:i]+self.encrypt(str1[i])+str1[i+1:]
-            for i in range (len(str1)):
-                str2=str2+str1[i]
-            print ('×Ö·û´®'+org+'¼ÓÃÜºóÎª£º'+str2)
-        elif self.type==2:  # ½âÃÜÊ±½øÈë
-            str1=input("ÇëÊäÈëÒª½âÃÜµÄ×Ö·û´®('xxx'):\n")
-            org=str1
-            for i in range (len(str1)):
-                str1=str1[:i]+self.decrypt(str1[i])+str1[i+1:]
-            for i in range (len(str1)):
-                str2=str2+str1[i]
-            print ('×Ö·û´®'+org+'½âÃÜºóÎª£º'+str2)
-        else:
-            print('Ñ¡Ôñ´íÎó£¬ÇëÖØĞÂÊäÈë£¡')
+        mainLayout=QGridLayout()
+        mainLayout.addWidget(label1,0,0)
+        mainLayout.addWidget(self.nameLable,0,1)
+        mainLayout.addWidget(nameButton,0,2)
+        mainLayout.addWidget(label2,1,0)
+        mainLayout.addWidget(self.styleLable,1,1)
+        mainLayout.addWidget(styleButton,1,2)
+        mainLayout.addWidget(label3,2,0)
+        mainLayout.addWidget(self.numberLable,2,1)
+        mainLayout.addWidget(numberButton,2,2)
+        mainLayout.addWidget(label4,3,0)
+        mainLayout.addWidget(self.costLable,3,1)
+        mainLayout.addWidget(costButton,3,2)
+        mainLayout.addWidget(label5,4,0)
+        mainLayout.addWidget(self.introductionLable,4,1)
+        mainLayout.addWidget(introductionButton,4,2)
 
-class Login:
-    def __init__(self,i):
-        self.i=i
+        self.setLayout(mainLayout)
 
-    def showface(self):
-        if self.i==2:
-            user = input("ÓÃ»§Ãû('xxx')£º")
-            pwd =input("ÃÜÂë('xxx')£º")
-            register(user,pwd)
-        elif self.i==1:
-            count=1
-            while count<=3:
-                user = user = input("ÓÃ»§Ãû('xxx')£º")
-                pwd =input("ÃÜÂë('xxx')£º")
-                r=log(user,pwd)#ÑéÖ¤ÓÃ»§ÃûºÍÃÜÂë
-                if r==True:
-                    print('µÇÂ¼³É¹¦')
-                    while True:
-                        encryption()
-                else:
-                    print('µÇÂ¼Ê§°Ü')
-                count +=1
-                if count == 4:
-                    print("ÃÜÂëÊäÈë´ÎÊı¹ı¶à£¬ÕË»§½«±»Ëø¶¨£¡")
-                    exit(0)
-                else:
-                    print("»¹ÓĞ%d´Î³¢ÊÔ»ú»á£¡"%(4-count))
-        elif self.i==0:
-            print('Ğ»Ğ»Ê¹ÓÃ£¬ÔÙ¼û£¡')
-            exit(0)
-        else:
-            print('ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë£¡')
 
-if __name__=='__main__':  # ²âÊÔ³ÌĞò
-    while True:
-        i=int(input('~~~~~~~~È¤Î¶ÃÜÂëÑ§~~~~~~~\n'
-                    '0.ÍË³ö\n'
-                    '1.µÇÂ¼\n'
-                    '2.×¢²á\n'
-                    '~~~~~~~~~~~~~~~~~~~~~~~~\n'
-                    'ÇëÊäÈëÄúµÄÑ¡Ôñ£º'))
-        pass1=Login(i)
-        pass1.showface()
+
+    def selectName(self):
+        name,ok = QInputDialog.getText(self,"é¡¹ç›®åç§°","è¾“å…¥é¡¹ç›®åç§°:",
+                                       QLineEdit.Normal,self.nameLable.text())
+        if ok and (len(name)!=0):
+            self.nameLable.setText(name)
+    def selectStyle(self):
+        list = ["å¤–åŒ…","è‡ªç ”"]
+
+        style,ok = QInputDialog.getItem(self,"é¡¹ç›®æ€§è´¨","è¯·é€‰æ‹©é¡¹ç›®æ€§è´¨ï¼š",list)
+        if ok :
+            self.styleLable.setText(style)
+
+    def selectNumber(self):
+        number,ok = QInputDialog.getInt(self,"é¡¹ç›®æˆå‘˜","è¯·è¾“å…¥é¡¹ç›®æˆå‘˜äººæ•°ï¼š",int(self.numberLable.text()),20,100,2)
+        if ok :
+            self.numberLable.setText(str(number))
+
+    def selectCost(self):
+        cost,ok = QInputDialog.getDouble(self,"é¡¹ç›®æˆæœ¬","è¯·è¾“å…¥é¡¹ç›®æˆå‘˜äººæ•°ï¼š",float(self.costLable.text()),100.00,500.00,2)
+        if ok :
+            self.costLable.setText(str(cost))
+
+    def selectIntroduction(self):
+        introduction,ok = QInputDialog.getMultiLineText(self,"é¡¹ç›®ä»‹ç»","ä»‹ç»ï¼š","æœåŠ¡å¤–åŒ…ç¬¬ä¸‰æ–¹å…¬å¸ \nPython project")
+        if ok :
+            self.introductionLable.setText(introduction)
+
+
+
+if __name__=="__main__":
+    import sys
+    app=QApplication(sys.argv)
+    myshow=InputDialog()
+    myshow.show()
+    sys.exit(app.exec_())

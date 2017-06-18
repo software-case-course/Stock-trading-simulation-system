@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="976a16ab-6de0-4d76-82c1-a0f5a8471828" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py" afterPath="$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stock-trading-simulation-system/main.py" afterPath="$PROJECT_DIR$/Stock-trading-simulation-system/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py" afterPath="$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stock-trading-simulation-system/user.py" afterPath="$PROJECT_DIR$/Stock-trading-simulation-system/user.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,8 +12,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$user.coverage" NAME="user Coverage Results" MODIFIED="1497608399571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$setup.coverage" NAME="setup Coverage Results" MODIFIED="1497609345008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
+    <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$user.coverage" NAME="user Coverage Results" MODIFIED="1497776272758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$userinfo.coverage" NAME="userinfo Coverage Results" MODIFIED="1497628915752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$mainwindow.coverage" NAME="mainwindow Coverage Results" MODIFIED="1497608472843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$dialog.coverage" NAME="dialog Coverage Results" MODIFIED="1497772125668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
@@ -36,6 +34,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userinfo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/userinfo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/main.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,7 +69,7 @@
       <file leaf-file-name="mainwindow.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
+            <state relative-caret-position="4825">
               <caret line="193" column="31" lean-forward="false" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
               <folding>
                 <element signature="e#198#218#0" expanded="true" />
@@ -60,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logindialog.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logindialog.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="385">
@@ -84,6 +102,7 @@
         <option value="$PROJECT_DIR$/Stock-trading-simulation-system/main.py" />
         <option value="$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py" />
         <option value="$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py" />
+        <option value="$PROJECT_DIR$/Stock-trading-simulation-system/user.py" />
       </list>
     </option>
   </component>
@@ -166,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.user">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,25 +200,6 @@
       <module name="Stock-trading-simulation-system" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stock-trading-simulation-system/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="mainwindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Stock-trading-simulation-system" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Stock-trading-simulation-system" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,6 +257,25 @@
       <module name="Stock-trading-simulation-system" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stock-trading-simulation-system/dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="user" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Stock-trading-simulation-system" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Stock-trading-simulation-system" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stock-trading-simulation-system/user.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -412,18 +431,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.mainwindow" />
-      <item index="2" class="java.lang.String" itemvalue="Python.setup" />
-      <item index="3" class="java.lang.String" itemvalue="Python.userinfo" />
-      <item index="4" class="java.lang.String" itemvalue="Python.dialog" />
+      <item index="1" class="java.lang.String" itemvalue="Python.setup" />
+      <item index="2" class="java.lang.String" itemvalue="Python.userinfo" />
+      <item index="3" class="java.lang.String" itemvalue="Python.dialog" />
+      <item index="4" class="java.lang.String" itemvalue="Python.user" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.dialog" />
-        <item index="2" class="java.lang.String" itemvalue="Python.userinfo" />
-        <item index="3" class="java.lang.String" itemvalue="Python.setup" />
-        <item index="4" class="java.lang.String" itemvalue="Python.mainwindow" />
+        <item index="0" class="java.lang.String" itemvalue="Python.user" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.dialog" />
+        <item index="3" class="java.lang.String" itemvalue="Python.userinfo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.setup" />
       </list>
     </recent_temporary>
   </component>
@@ -450,7 +469,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -723,14 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/dialog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-105">
@@ -739,10 +750,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/userinfo.py">
+    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/stock02.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="275">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -757,17 +776,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/stock02.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
+        <state relative-caret-position="4825">
           <caret line="193" column="31" lean-forward="false" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
           <folding>
             <element signature="e#198#218#0" expanded="true" />
@@ -775,10 +786,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/logindialog.py">
+    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/userinfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+        <state relative-caret-position="550">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stock-trading-simulation-system/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="100" column="25" lean-forward="false" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
           <folding />
         </state>
       </provider>
