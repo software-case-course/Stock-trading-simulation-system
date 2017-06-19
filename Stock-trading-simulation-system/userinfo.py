@@ -1,4 +1,6 @@
 
+import pickle
+
 class userinfo(object):
     def __init__(self, username, userpw, money):
         self.username = username
@@ -22,6 +24,13 @@ class userinfo(object):
         self.append(userinfo(name,pw,1000))
         return self
 
+    def save(self):
+        pickle.dump(self, open("user.data","wb"))
+
+    def load():
+        return pickle.load(open("user.data","rb"))
+
+
 
 
 a=userinfo('mjl','1234',1000)
@@ -32,9 +41,12 @@ user.append(b)
 
 userinfo.register(user,'asdaassd','asasddas')
 userinfo.register(user,'mjl','asasddas')
-for c in user:
+
+userinfo.save(user)
+user2=userinfo.load()
+for c in user2:
     print(c.username)
-print(userinfo.login(user,'mjl','1234').money)
+print(userinfo.login(user2,'mjl','1234').money)
 
 
 # a=userinfo("a","b",100)
