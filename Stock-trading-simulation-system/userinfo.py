@@ -11,6 +11,24 @@ class userinfo(object):
     def addstock(self,stockcode,num):
         self.stocks[stockcode]=num
 
+    def butstock(self,stockcode,num,nowprice):
+        if nowprice*num>=self.money:
+            self.stocks[stockcode] += num
+            self.money-=nowprice*num
+            return 1
+        else:
+            return 0
+
+    def sellstock(self,stockcode,num,nowprice):
+        if self.stocks[stockcode]>=num:
+            self.stocks[stockcode] -= num
+            self.money += nowprice * num
+            return 1
+        else:
+            return 0
+
+
+
     def login(self,name,pw):
         for a in self:
             if a.username==name and a.userpw==pw:
@@ -24,11 +42,12 @@ class userinfo(object):
         self.append(userinfo(name,pw,1000))
         return self
 
-    def save(self):
-        pickle.dump(self, open("user.data","wb"))
 
-    def load():
-        return pickle.load(open("user.data","rb"))
+def save(self):
+    pickle.dump(self, open("user.data","wb"))
+
+def load():
+    return pickle.load(open("user.data","rb"))
 
 
 
