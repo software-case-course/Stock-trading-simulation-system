@@ -7,6 +7,10 @@
 # WARNING! All changes made in this file will be lost!
 
 import easyquotation
+
+import sys
+
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
@@ -149,3 +153,18 @@ class Ui_MainWindow(object):
 
         else:
             self.StockCodeEdit.setText('请输入6位数字的股票代码')
+
+
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    # ui = stockinfo.Ui_MainWindow()
+    ui = Ui_MainWindow()
+    qss_file = open('qss/style2.qss').read()
+    MainWindow.setStyleSheet(qss_file)
+
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
