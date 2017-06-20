@@ -1,12 +1,12 @@
 import sys
 
-import WindowFuntion
+import WindowFuntion,UserInfo
+
 
 from PyQt5.QtWidgets import QApplication
 
 
 if __name__ == '__main__':
-
     app = QApplication(sys.argv)
     mainWindow = WindowFuntion.MainWindow()
     qss_file = open('qss/style2.qss').read()

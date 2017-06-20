@@ -43,30 +43,28 @@ class userinfo(object):
         self.append(userinfo(name,pw,1000))
         return self
 
+    def save(self):
+        pickle.dump(self, open("user.data", "wb"))
 
-def save(self):
-    pickle.dump(self, open("user.data","wb"))
-
-def load():
-    return pickle.load(open("user.data","rb"))
-
+    def load():
+        return pickle.load(open("user.data", "rb"))
 
 
 
-a=userinfo('mjl','1234',1000)
-b=userinfo('asdasd','asdas',100)
-user=[];
-user.append(a)
-user.append(b)
-
-userinfo.register(user,'asdaassd','asasddas')
-userinfo.register(user,'mjl','asasddas')
-
-userinfo.save(user)
-user2=userinfo.load()
-for c in user2:
-    print(c.username)
-print(userinfo.login(user2,'mjl','1234').money)
+# a=userinfo('mjl','1234',1000)
+# b=userinfo('asdasd','asdas',100)
+# user=[];
+# user.append(a)
+# user.append(b)
+#
+# userinfo.register(user,'asdaassd','asasddas')
+# userinfo.register(user,'mjl','asasddas')
+#
+# userinfo.save(user)
+# user2=userinfo.load()
+# for c in user2:
+#     print(c.username)
+# print(userinfo.login(user2,'mjl','1234').money)
 
 
 # a=userinfo("a","b",100)
@@ -85,3 +83,9 @@ print(userinfo.login(user2,'mjl','1234').money)
 #     for d in c.stocks:
 #         print(d)
 #         print(c.stocks[d])
+
+# user=[]
+# userinfo.register(user,'asdaassd','asasddas')
+#
+# for c in user:
+#      print(c.username)
