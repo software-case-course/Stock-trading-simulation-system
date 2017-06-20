@@ -1,6 +1,7 @@
 
 import pickle
 
+
 class userinfo(object):
     def __init__(self, username, userpw, money):
         self.username = username
