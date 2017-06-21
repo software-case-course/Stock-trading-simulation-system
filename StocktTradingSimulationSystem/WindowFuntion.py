@@ -27,7 +27,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
         self.informationbutton.clicked.connect(self.updateinfo)
         self.setWindowIcon(QIcon('res//icon.jpg'))
         palette = QPalette()
-        icon = QPixmap('res//back2.jpg')
+        icon = QPixmap('res//back.jpg')
         palette.setBrush(self.backgroundRole(), QBrush(icon))  # 添加背景图片
         self.setPalette(palette)
 
@@ -134,10 +134,11 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
 
     def updateinfo(self):
         global user
-        self.remainder.setText(str("%.2f" % user.money))
+
         self.tabWidget.setCurrentIndex(1)
         if user!=None:
             self.showhis()
+            self.remainder.setText(str("%.2f" % user.money))
             self.tableWidget.setRowCount(len(user.stocks))
             i=0
             for code in user.stocks:
