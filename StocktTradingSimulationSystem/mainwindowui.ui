@@ -39,7 +39,7 @@
       <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_login">
       <attribute name="title">
@@ -427,7 +427,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLineEdit" name="sharesnumber">
+       <widget class="QLineEdit" name="StockCodeEdit">
         <property name="styleSheet">
          <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
         </property>
@@ -439,7 +439,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QComboBox" name="selectbutton">
+         <widget class="QComboBox" name="comboBox">
           <property name="styleSheet">
            <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
           </property>

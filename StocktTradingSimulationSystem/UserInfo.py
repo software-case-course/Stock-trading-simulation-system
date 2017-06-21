@@ -9,45 +9,49 @@ class userinfo(object):
         self.money = money
         self.stocks={}
 
-    def addstock(self,stockcode,num):
-        self.stocks[stockcode]=num
+    def addstock(user,stockcode,num):
+        user.stocks[stockcode]=num
 
-    def butstock(self,stockcode,num,nowprice):
-        if nowprice*num>=self.money:
-            self.stocks[stockcode] += num
-            self.money-=nowprice*num
+    def butstock(user,stockcode,num,nowprice):
+        if nowprice*num<=user.money:
+            if user.stocks.get(stockcode) == None:
+                user.stocks[stockcode]=num
+                print(user.stocks[stockcode])
+            else:
+                user.stocks[stockcode] += num
+            user.money-=nowprice*num
+            print(user.money)
             return 1
         else:
             return 0
 
-    def sellstock(self,stockcode,num,nowprice):
-        if self.stocks[stockcode]>=num:
-            self.stocks[stockcode] -= num
-            self.money += nowprice * num
+    def sellstock(user,stockcode,num,nowprice):
+        if user.stocks[stockcode]>=num:
+            user.stocks[stockcode] -= num
+            user.money += nowprice * num
             return 1
         else:
             return 0
 
 
 
-    def login(self,name,pw):
-        for a in self:
+    def login(users,name,pw):
+        for a in users:
             if a.username==name and a.userpw==pw:
                 return a
         return 0
 
-    def register(self,name,pw):
-        for n in self:
+    def register(users,name,pw):
+        for n in users:
             if n.username==name:
                 return 0
-        self.append(userinfo(name,pw,1000))
-        return self
+        users.append(userinfo(name,pw,1000))
+        return users
 
-    def save(self):
-        pickle.dump(self, open("user.data", "wb"))
+    def save(users):
+        pickle.dump(users, open("user.data", "wb"))
 
-    def load():
-        return pickle.load(open("user.data", "rb"))
+
 
 
 
