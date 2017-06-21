@@ -38,13 +38,22 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
             self.listWidget.addItem(QListWidgetItem(a))
 
     def loginpage(self):
-
-
-
-        self.loginbutton_2.setText('登陆')
-        self.accountnumberline.setText('')
-        self.passwordline.setText('')
-        self.tabWidget.setCurrentIndex(0)
+        global users,user
+        if self.selectlogin.text()=="退出登陆":
+            self.selectlogin.setText('登陆')
+            self.username.setText('游客')
+            users = []
+            user = None
+            self.tableWidget.clear()
+            self.listWidget.clear()
+            self.remainder.setText('0')
+            self.accountnumberline.setText('')
+            self.passwordline.setText('')
+        else:
+            self.loginbutton_2.setText('登陆')
+            self.accountnumberline.setText('')
+            self.passwordline.setText('')
+            self.tabWidget.setCurrentIndex(0)
 
 
     def relogin(self):
@@ -59,12 +68,15 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                 users=pickle.load(open("user.data", "rb"))
                 user=UserInfo.userinfo.login(users, self.accountnumberline.text(), self.passwordline.text())
                 if user!=0:
-                    print('登陆成功')
+                    #print('登陆成功')
                     QMessageBox.information(self, '欢迎', '登陆成功')
                     self.username.setText(user.username)
                     self.remainder.setText(str(user.money))
                     self.tabWidget.setCurrentIndex(1)
                     self.updateinfo()
+                    self.selectlogin.setText("退出登陆")
+                    self.accountnumberline.setText('')
+                    self.passwordline.setText('')
                 else:
                     print('登陆失败')
                     QMessageBox.information(self, '登陆失败', '登陆失败，请检查用户名或密码是否正确')
@@ -93,7 +105,8 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
             QMessageBox.information(self, '失败', '请先登陆')
         else:
             if UserInfo.userinfo.butstock(user,self.sharenumberline.text(),int(self.numberbox.text()),float(self.sharepriceline.text())):
-                print('购买成功')
+                # print('购买成功')
+                QMessageBox.information(self, '成功', '购买成功')
                 self.shareholdingline.setText(str(user.stocks[self.sharenumberline.text()]))
                 self.updateinfo()
                 users.append(user)
@@ -108,7 +121,8 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
             QMessageBox.information(self, '失败', '请先登陆')
         else:
             if UserInfo.userinfo.sellstock(user,self.sharenumberline.text(),int(self.numberbox.text()),float(self.sharepriceline.text())):
-                print('卖出成功')
+                # print('卖出成功')
+                QMessageBox.information(self, '成功', '购买成功')
                 self.shareholdingline.setText(str(user.stocks[self.sharenumberline.text()]))
 
                 users.append(user)

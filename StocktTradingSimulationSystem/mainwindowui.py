@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
         self.tab_login = QtWidgets.QWidget()
         self.tab_login.setObjectName("tab_login")
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(self.tab_login)
-        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(320, 90, 251, 31))
+        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(290, 90, 251, 31))
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
         self.accountnumberline.setObjectName("accountnumberline")
         self.horizontalLayout_3.addWidget(self.accountnumberline)
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.tab_login)
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(320, 160, 251, 31))
+        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(290, 160, 251, 31))
         self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
         self.passwordline.setObjectName("passwordline")
         self.horizontalLayout_4.addWidget(self.passwordline)
         self.loginbutton_2 = QtWidgets.QPushButton(self.tab_login)
-        self.loginbutton_2.setGeometry(QtCore.QRect(390, 240, 101, 31))
+        self.loginbutton_2.setGeometry(QtCore.QRect(360, 240, 101, 31))
         self.loginbutton_2.setStyleSheet("font: 14pt \"04b_21\";")
         self.loginbutton_2.setObjectName("loginbutton_2")
         self.tabWidget.addTab(self.tab_login, "")
@@ -256,7 +256,7 @@ class Ui_MainWindow(object):
 "     border-style: solid;\n"
 "     border-color: rgb(100, 160,220);\n"
 "     border-radius:15px;\n"
-"     font: 10pt \"微软雅黑\";\n"
+"     font: 16pt \"微软雅黑\";\n"
 "}")
         self.username.setAlignment(QtCore.Qt.AlignCenter)
         self.username.setObjectName("username")
@@ -284,7 +284,7 @@ class Ui_MainWindow(object):
 "     border-style: solid;\n"
 "     border-color: rgb(100, 160,220);\n"
 "     border-radius:15px;\n"
-"     font: 16pt \"微软雅黑\";\n"
+"     font: 10pt \"微软雅黑\";\n"
 "}")
         self.remainder.setAlignment(QtCore.Qt.AlignCenter)
         self.remainder.setObjectName("remainder")
@@ -294,7 +294,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
