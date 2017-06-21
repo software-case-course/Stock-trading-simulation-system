@@ -2,6 +2,7 @@ import sys
 
 import WindowFuntion,UserInfo
 
+import easyquotation
 
 from PyQt5.QtWidgets import QApplication
 

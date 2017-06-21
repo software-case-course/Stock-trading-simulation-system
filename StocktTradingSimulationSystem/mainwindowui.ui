@@ -11,7 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>股票交易模拟系统</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>40</width>
+    <height>40</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="widget" native="true">
@@ -39,7 +45,7 @@
       <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_login">
       <attribute name="title">
@@ -129,9 +135,32 @@
          <height>411</height>
         </rect>
        </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="textElideMode">
+        <enum>Qt::ElideMiddle</enum>
+       </property>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
        <column>
         <property name="text">
          <string>股票名称</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
         </property>
        </column>
        <column>
@@ -142,6 +171,11 @@
        <column>
         <property name="text">
          <string>当前价格</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>今日涨幅</string>
         </property>
        </column>
        <column>
@@ -166,14 +200,17 @@
        </column>
        <column>
         <property name="text">
-         <string>买入价格</string>
+         <string>总现价</string>
         </property>
        </column>
-       <column>
+       <item row="0" column="0">
         <property name="text">
-         <string>总金额</string>
+         <string/>
         </property>
-       </column>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_trade">
@@ -431,8 +468,11 @@
         <property name="styleSheet">
          <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
         </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhHiddenText</set>
+        </property>
         <property name="text">
-         <string>请输入股票代码</string>
+         <string/>
         </property>
        </widget>
       </item>

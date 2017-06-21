@@ -26,10 +26,13 @@ class userinfo(object):
             return 0
 
     def sellstock(user,stockcode,num,nowprice):
-        if user.stocks[stockcode]>=num:
-            user.stocks[stockcode] -= num
-            user.money += nowprice * num
-            return 1
+        if user.stocks.get(stockcode) != None:
+            if user.stocks[stockcode]>=num:
+                user.stocks[stockcode] -= num
+                user.money += nowprice * num
+                return 1
+            else:
+                return 0
         else:
             return 0
 
@@ -45,7 +48,7 @@ class userinfo(object):
         for n in users:
             if n.username==name:
                 return 0
-        users.append(userinfo(name,pw,1000))
+        users.append(userinfo(name,pw,100000))
         return users
 
     def save(users):
