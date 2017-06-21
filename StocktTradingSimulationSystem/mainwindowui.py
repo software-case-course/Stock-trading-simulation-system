@@ -284,7 +284,7 @@ class Ui_MainWindow(object):
 "     border-style: solid;\n"
 "     border-color: rgb(100, 160,220);\n"
 "     border-radius:15px;\n"
-"     font: 10pt \"微软雅黑\";\n"
+"     font: 16pt \"微软雅黑\";\n"
 "}")
         self.remainder.setAlignment(QtCore.Qt.AlignCenter)
         self.remainder.setObjectName("remainder")

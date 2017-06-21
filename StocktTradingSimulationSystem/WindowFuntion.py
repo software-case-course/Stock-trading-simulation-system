@@ -25,9 +25,9 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
         self.sellbutton.clicked.connect(self.sell)
         self.StockCodeEdit.setPlaceholderText('请输入查询股票代码')
         self.informationbutton.clicked.connect(self.updateinfo)
-        self.setWindowIcon(QIcon('icon.jpg'))
+        self.setWindowIcon(QIcon('res//icon.jpg'))
         palette = QPalette()
-        icon = QPixmap('back.jpg')
+        icon = QPixmap('res//back2.jpg')
         palette.setBrush(self.backgroundRole(), QBrush(icon))  # 添加背景图片
         self.setPalette(palette)
 

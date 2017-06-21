@@ -22,7 +22,7 @@ class userinfo(object):
                 user.stocks[stockcode] += num
             user.money-=nowprice*num
             user.history.append('在 '+str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))+' 以'+str(nowprice)+'价格' +' 购入股票 '+str(stockcode)+' '+str(num)+'股')
-            user.history.append(str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))+' 余额 '+str(user.money)+'元')
+            user.history.append(str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))+' 余额 '+str("%.2f" % user.money)+'元')
             return 1
         else:
             return 0
@@ -35,7 +35,7 @@ class userinfo(object):
                 user.history.append('在 ' + str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) +' 以'+str(nowprice)+'价格' +' 售出股票 ' + str(
                     stockcode) + ' ' + str(num) + '股')
                 user.history.append(
-                    str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + ' 余额 ' + str(user.money) + '元')
+                    str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())) + ' 余额 ' + str("%.2f" % user.money) + '元')
                 return 1
             else:
                 return 0
