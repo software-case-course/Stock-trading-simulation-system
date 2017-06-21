@@ -30,6 +30,7 @@
 
 pip install requests<br>
 pip install aiohttp<br>
+pip install easyquotation<br>
 pip install easyutils<br>
 pip install pyQt5
 
