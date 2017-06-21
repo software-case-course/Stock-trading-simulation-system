@@ -1,9 +1,9 @@
 
-from PyQt5.QtWidgets import QMainWindow,QTableWidgetItem,QMessageBox
+from PyQt5.QtWidgets import QMainWindow,QTableWidgetItem,QMessageBox,QListWidgetItem
+from PyQt5.QtGui import QIcon,QPalette,QPixmap,QBrush
 
 
-
-import mainwindowui,UserInfo,easyquotation,pickle
+import mainwindowui,UserInfo,easyquotation,pickle,os
 
 
 users=[]
@@ -21,11 +21,21 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
         self.reloginbutton.clicked.connect(self.relogin)
         self.searcherbutton.clicked.connect(self.search)
         self.buybutton.clicked.connect(self.buy)
+
         self.sellbutton.clicked.connect(self.sell)
         self.StockCodeEdit.setPlaceholderText('请输入查询股票代码')
         self.informationbutton.clicked.connect(self.updateinfo)
+        self.setWindowIcon(QIcon('icon.jpg'))
+        palette = QPalette()
+        icon = QPixmap('back.jpg')
+        palette.setBrush(self.backgroundRole(), QBrush(icon))  # 添加背景图片
+        self.setPalette(palette)
 
-
+    def showhis(self):
+        global user
+        self.listWidget.clear()
+        for a in user.history:
+            self.listWidget.addItem(QListWidgetItem(a))
 
     def loginpage(self):
 
@@ -45,15 +55,19 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
     def login(self):
         global users,user
         if self.loginbutton_2.text()=='登陆':
-            users=pickle.load(open("user.data", "rb"))
-            user=UserInfo.userinfo.login(users, self.accountnumberline.text(), self.passwordline.text())
-            if user!=0:
-                print('登陆成功')
-                QMessageBox.information(self, '欢迎', '登陆成功')
-                self.username.setText(user.username)
-                self.remainder.setText(str(user.money))
-                self.tabWidget.setCurrentIndex(1)
-                self.updateinfo()
+            if os.path.isfile('user.data'):
+                users=pickle.load(open("user.data", "rb"))
+                user=UserInfo.userinfo.login(users, self.accountnumberline.text(), self.passwordline.text())
+                if user!=0:
+                    print('登陆成功')
+                    QMessageBox.information(self, '欢迎', '登陆成功')
+                    self.username.setText(user.username)
+                    self.remainder.setText(str(user.money))
+                    self.tabWidget.setCurrentIndex(1)
+                    self.updateinfo()
+                else:
+                    print('登陆失败')
+                    QMessageBox.information(self, '登陆失败', '登陆失败，请检查用户名或密码是否正确')
 
             else:
                 print('登陆失败')
@@ -72,10 +86,12 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                 QMessageBox.information(self, '注册失败', '注册失败，用户名重复')
 
     def buy(self):
+        global user, users
         if self.sharenumberline.text()=='':
             QMessageBox.information(self, '购买失败', '请选择购买股票')
+        elif user==None:
+            QMessageBox.information(self, '失败', '请先登陆')
         else:
-            global user,users
             if UserInfo.userinfo.butstock(user,self.sharenumberline.text(),int(self.numberbox.text()),float(self.sharepriceline.text())):
                 print('购买成功')
                 self.shareholdingline.setText(str(user.stocks[self.sharenumberline.text()]))
@@ -85,10 +101,12 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
             else:
                 QMessageBox.information(self, '购买失败', '余额不足')
     def sell(self):
+        global user, users
         if self.sharenumberline.text()=='':
             QMessageBox.information(self, '卖出失败', '请选择购买股票')
+        elif user==None:
+            QMessageBox.information(self, '失败', '请先登陆')
         else:
-            global user
             if UserInfo.userinfo.sellstock(user,self.sharenumberline.text(),int(self.numberbox.text()),float(self.sharepriceline.text())):
                 print('卖出成功')
                 self.shareholdingline.setText(str(user.stocks[self.sharenumberline.text()]))
@@ -105,6 +123,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
         self.remainder.setText(str("%.2f" % user.money))
         self.tabWidget.setCurrentIndex(1)
         if user!=None:
+            self.showhis()
             self.tableWidget.setRowCount(len(user.stocks))
             i=0
             for code in user.stocks:
@@ -123,8 +142,9 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                 self.tableWidget.setItem(i, 8, QTableWidgetItem(str("%.2f" % (int(user.stocks[code])*stock[code]['now']))))
                 self.tableWidget.resizeColumnsToContents()
                 self.tableWidget.resizeRowsToContents()
-
                 i += 1
+
+
 
 
 
@@ -138,7 +158,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                 stockdata = quotation.stocks(code)
                 if stockdata:
                     stockdata = stockdata[code]
-                    print(stockdata)
+                    #print(stockdata)
                     self.sharenameline.setText(stockdata['name'])
                     self.sharenumberline.setText(self.StockCodeEdit.text())
                     self.sharepriceline.setText(str(stockdata['now']))
@@ -162,7 +182,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                 stockdata = quotation.stocks(code)
                 if stockdata:
                     stockdata = stockdata[code]
-                    print(stockdata)
+                    #print(stockdata)
                     self.sharenameline.setText(stockdata['name'])
                     self.sharenumberline.setText(self.StockCodeEdit.text())
                     self.sharepriceline.setText(str(stockdata['now']))
@@ -176,7 +196,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
                     else:
                         self.shareholdingline.setText('0')
 
-                    self.increaseline.setText(str(stockdata['振幅']))
+                    self.increaseline.setText(str(stockdata['涨跌(%)'])+'%')
                     self.datatimeline.setText(str(stockdata['datetime']))
 
                 else:

@@ -1,8 +1,8 @@
 import sys
 
-import WindowFuntion,UserInfo
+import WindowFuntion
 
-import easyquotation
+
 
 from PyQt5.QtWidgets import QApplication
 
