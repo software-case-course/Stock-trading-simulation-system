@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="976a16ab-6de0-4d76-82c1-a0f5a8471828" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/qss/style2.qss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/qss/style3.qss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back4.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back.jpg" afterPath="$PROJECT_DIR$/StocktTradingSimulationSystem/res/back.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/user.data" afterPath="$PROJECT_DIR$/StocktTradingSimulationSystem/user.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/WindowFuntion.py" afterPath="$PROJECT_DIR$/StocktTradingSimulationSystem/WindowFuntion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StocktTradingSimulationSystem/qss/style.qss" afterPath="$PROJECT_DIR$/StocktTradingSimulationSystem/qss/style.qss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +19,7 @@
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$setup.coverage" NAME="setup Coverage Results" MODIFIED="1497609345008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$user.coverage" NAME="user Coverage Results" MODIFIED="1497804515713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$userinfo.coverage" NAME="userinfo Coverage Results" MODIFIED="1498045196441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StocktTradingSimulationSystem" />
-    <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1498056429359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StocktTradingSimulationSystem" />
+    <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1498057234781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StocktTradingSimulationSystem" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$stockinfo.coverage" NAME="stockinfo Coverage Results" MODIFIED="1497963728260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1497970511529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StocktTradingSimulationSystem" />
     <SUITE FILE_PATH="coverage/Stock_trading_simulation_system$mainwindow.coverage" NAME="mainwindow Coverage Results" MODIFIED="1497608472843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Stock-trading-simulation-system" />
@@ -64,8 +56,8 @@
       <file leaf-file-name="WindowFuntion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/WindowFuntion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="142" column="15" lean-forward="true" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
+            <state relative-caret-position="-177">
+              <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
               <folding>
                 <element signature="e#1#85#0" expanded="true" />
               </folding>
@@ -76,7 +68,7 @@
       <file leaf-file-name="mainwindowui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/mainwindowui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2547">
+            <state relative-caret-position="-1055">
               <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
               <folding />
             </state>
@@ -493,7 +485,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -623,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/mainwindowui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2547">
-          <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/UserInfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -649,10 +633,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/mainwindowui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1055">
+          <caret line="292" column="30" lean-forward="false" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/StocktTradingSimulationSystem/WindowFuntion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="142" column="15" lean-forward="true" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
+        <state relative-caret-position="-177">
+          <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
           <folding>
             <element signature="e#1#85#0" expanded="true" />
           </folding>

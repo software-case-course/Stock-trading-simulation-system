@@ -44,7 +44,7 @@ class MainWindow(QMainWindow, mainwindowui.Ui_MainWindow):
             self.username.setText('游客')
             users = []
             user = None
-            self.tableWidget.clear()
+            self.tableWidget.setRowCount(0)
             self.listWidget.clear()
             self.remainder.setText('0')
             self.accountnumberline.setText('')
